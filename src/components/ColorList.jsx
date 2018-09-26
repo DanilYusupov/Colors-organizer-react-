@@ -10,7 +10,7 @@ const ColorList = ({ colors = [], onRate = f => f, onRemove = f => f }) =>
                     <Color key={color.id}
                            {...color}
                            onRate={(rating) => onRate(color.id, rating)}
-                           onRemove={() => onRemove(color.id)}/>,
+                           onRemove={() => onRemove(color.id)}/>
                 )
         }
     </div>;

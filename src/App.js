@@ -25,7 +25,7 @@ class App extends Component {
                 rating: 0,
             },
         ];
-        this.setState({ colors })
+        this.setState({ colors });
     }
 
     rateColor(id, rating) {
@@ -36,14 +36,15 @@ class App extends Component {
                     ...color,
                     rating,
                 },
-        )
+        );
+        this.setState({colors});
     }
 
     removeColor(id) {
         const colors = this.state.colors.filter(
             color => color.id !== id,
         );
-        this.setState(colors);
+        this.setState({colors});
     }
 
     render() {
