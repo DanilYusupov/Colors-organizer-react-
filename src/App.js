@@ -37,14 +37,14 @@ class App extends Component {
                     rating,
                 },
         );
-        this.setState({colors});
+        this.setState({ colors });
     }
 
     removeColor(id) {
         const colors = this.state.colors.filter(
             color => color.id !== id,
         );
-        this.setState({colors});
+        this.setState({ colors });
     }
 
     render() {
@@ -52,10 +52,21 @@ class App extends Component {
         const { colors } = this.state;
         return (
             <div className="App">
-                <AddColorForm onNewColor={addColor}/>
-                <ColorList colors={colors}
-                           onRate={rateColor}
-                           onRemove={removeColor}/>
+                <div className="container shadow-sm p-3 mb-5 bg-white rounded" style={{width: 800 + 'px'}}>
+                    <div className="row">
+                        <div className="col">
+                            <AddColorForm onNewColor={addColor}/>
+                        </div>
+                    </div>
+                    <div className="dropdown-divider"></div>
+                    <div className="row">
+                        <div className="col">
+                            <ColorList colors={colors}
+                                       onRate={rateColor}
+                                       onRemove={removeColor}/>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
